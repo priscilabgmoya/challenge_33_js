@@ -16,48 +16,135 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Challenge 33 JavaScript</title>
   </head>
   <body>
     <main>
       <section class="container-fluid">
-        <article class="row ">
-          <p class="h2 text-bg-warning text-center">Producto</p> 
-          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4 my-1"> <label for="inputNombre">Nombre:</label><input type="text" name="inputNombre" id="inputNombreProducto" minlength="1" maxlength="30" required></span>
-          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4 my-1"> <label for="inputPrecio">Precio<span class="h6 text-danger ">*</span>: </label><input type="text" name="inputPrecio" id="inputPrecioProducto"  minlength="1" maxlength="10" required></span>
-          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4 d-flex justify-content-center">
+        <article class="row">
+          <p class="h2 text-bg-warning text-center">Producto</p>
+          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4 my-1">
+            <label for="inputNombre">Nombre:</label
+            ><input
+              type="text"
+              name="inputNombre"
+              id="inputNombreProducto"
+              minlength="1"
+              maxlength="30"
+              required
+          /></span>
+          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4 my-1">
+            <label for="inputPrecio"
+              >Precio<span class="h6 text-danger">*</span>: </label
+            ><input
+              type="text"
+              name="inputPrecio"
+              id="inputPrecioProducto"
+              minlength="1"
+              maxlength="10"
+              required
+          /></span>
+          <span
+            class="col-xl-4 col-sm-4 col-lg-4 col-md-4 d-flex justify-content-center"
+          >
             <button class="btn btn-success" onclick="agregarProducto()">
-                Agregar Producto
+              Agregar Producto
             </button>
           </span>
-          <p class="h6 text-danger ">*El ingreso del precio tiene que ser escrito con un punto (.) para incluir los decimales.</p>
+          <p class="h6 text-danger">
+            *El ingreso del precio tiene que ser escrito con un punto (.) para
+            incluir los decimales.
+          </p>
         </article>
-        <article class="row row-sm-10 row-md-10 row-lg-10  d-flex justify-content-center">
-          <p class="h3 text-bg-success text-center">Lista De Producto</p> 
-          <table class="border border-black solid ">
-            <thead class="text-center ">
-                <th>Codigo</th>
-                <th>Nombre</th>
-                <th>Precio </th>
-                <th>  </th>
+        <article
+          class="row row-sm-10 row-md-10 row-lg-10 d-flex justify-content-center"
+        >
+          <p class="h3 text-bg-success text-center">Lista De Producto</p>
+          <table class="border border-black solid">
+            <thead class="text-center">
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th></th>
             </thead>
-            <tbody id="bodyTablaProducto" class="text-center">
-
-            </tbody>
+            <tbody id="bodyTablaProducto" class="text-center"></tbody>
           </table>
         </article>
         <article class="row my-2">
-          <p class="h3 text-bg-info text-center">Total de la Lista de Productos</p>    
-          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4 my-1"> <label for="inputCantidadProductos">Cantidad De Productos:</label> <label id="cantidadProducto" style="width: 50%;" ></label></span>
-          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4 my-1"> <label for="inputTotal">Total: </label><label id="totalPrecio" style="width: 50%;" ></label></span>
-          <span class="col-xl-4 col-sm-4 col-lg-4 col-md-4  d-flex justify-content-center">
+          <p class="h3 text-bg-info text-center">
+            Total de la Lista de Productos
+          </p>
+          <span class="col-xl-3 col-sm-3 col-lg-3 col-md-3 my-1">
+            <label for="inputCantidadProductos">Cantidad De Productos:</label>
+            <label id="cantidadProducto" style="width: 50%"></label
+          ></span>
+          <span class="col-xl-3 col-sm-3 col-lg-3 col-md-3 my-1">
+            <label for="inputTotal">Total: </label
+            ><label id="totalPrecio" style="width: 50%"></label
+          ></span>
+          <span
+            class="col-xl-5 col-sm-5 col-lg-5 col-md-5 d-flex justify-content-center"
+          >
             <button class="btn btn-secondary" onclick="calcularTotal()">
-             Calcular Total
+              Calcular Total
             </button>
             <button class="btn btn-danger mx-2" onclick="cancelarOperacion()">
               Cancelar Operacion
-             </button>
+            </button>
+            <button
+              class="btn btn-primary mx-2 verFactura"
+              data-bs-toggle="modal"
+              data-bs-target="#imprimirModal"
+              onclick=""
+            >
+              ver Factura
+            </button>
+          </span>
+        </article>
+      </section>
+      <!-- Modal -->
+      <section
+        class="modal fade"
+        id="imprimirModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <article class="modal-dialog">
+          <span class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Factura de Productos
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <ol id="listadoProductoModal"></ol>
+              <label for="inputTotal">Total: </label
+              ><label id="totalPrecioModal" style="width: 50%"></label>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="imprimirFacturaProducto()"
+              >
+                Imprimir Factura
+              </button>
+            </div>
           </span>
         </article>
       </section>
