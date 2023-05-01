@@ -1,4 +1,4 @@
-# Challenge 32 - JavaScript
+# Challenge 33 - JavaScript
 
 ## Descripcion de las actividades 
 Los temas abarcados por lo mismo enunciados: 
@@ -22,7 +22,7 @@ En una terminal seleccionar la carpeta donde se va a descargar el mismo
 ### paso 2 
 escribimos en la terminal la siguiente linea de codigo: 
 ```
-git clone https://github.com/priscilabgmoya/challenge_32_js
+git clone https://github.com/priscilabgmoya/challenge_33_js
 ```
 ## Autores 
 - [Garcia Moya, Priscila Belen](https://github.com/priscilabgmoya)
