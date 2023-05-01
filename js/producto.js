@@ -1,5 +1,5 @@
 /**
- * 4- Escribe una clase Producto para crear objetos. Estos objetos, 
+ *  Escribe una clase Producto para crear objetos. Estos objetos, 
  * deben presentar las propiedades código, nombre y precio, 
  * además del método imprime datos, el cual escribe por pantalla los valores de sus propiedades.
  * Posteriormente, cree tres instancias de este objeto y guárdalas en un array.
