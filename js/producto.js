@@ -110,7 +110,7 @@ function calcularTotal(){
     listado_producto.forEach(producto => {  
               suma += producto.getPrecio; 
     }); 
-    document.querySelector("#totalPrecio").innerText =  "  " + "$" + suma; 
+    document.querySelector("#totalPrecio").innerText =  "  " + "$" + suma.toFixed(2); 
 }
 
 function cancelarOperacion(){
